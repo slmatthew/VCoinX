@@ -1,4 +1,4 @@
-# VCoin
+# VCoinX
 
 VK Coin Miner - недомайнер на NodeJS
 
