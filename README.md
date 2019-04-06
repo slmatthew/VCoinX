@@ -7,6 +7,7 @@ VK Coin Miner - недомайнер на NodeJS
 
 
 [![node version](https://img.shields.io/badge/node->%3D8.0-blue.svg?style=flat-square)](https://nodejs.org/)
+[![node version](https://img.shields.io/badge/VCoin-1.3.2-purple.svg?style=flat-square)](https://github.com/xTCry/VCoin)
 [![vcoin version](https://img.shields.io/badge/VCoinX-1.3.2-purple.svg?style=flat-square)](https://github.com/slmatthew/VCoinX/)
 
 ***
