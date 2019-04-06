@@ -6,9 +6,8 @@ VK Coin Miner - недомайнер на NodeJS
 ![](https://pp.userapi.com/c855028/v855028357/1734f/9kFW8iHOxHc.jpg)
 
 
-[![Донат](https://img.shields.io/badge/Донат-Qiwi-orange.svg)](https://qiwi.me/xtcry)
 [![node version](https://img.shields.io/badge/node->%3D8.0-blue.svg?style=flat-square)](https://nodejs.org/)
-[![vcoin version](https://img.shields.io/badge/VCoin-1.3.2-purple.svg?style=flat-square)](https://github.com/xTCry/VCoin/)
+[![vcoin version](https://img.shields.io/badge/VCoinX-1.3.2-purple.svg?style=flat-square)](https://github.com/xTCry/VCoin/)
 
 ***
 
@@ -83,7 +82,7 @@ node index.js -u https://coin.vkforms.ru?vk_access_token_settings=friends\&vk_ap
 
 | Параметр | Описание                             |
 |----------|--------------------------------------|
-| VK_TOKEN | [Поулчить токен](#получение-токена)  |
+| VK_TOKEN | [Получить токен](#получение-токена)  |
 | DONEURL  | Ссылка на приложение                 |
 
 Если указать только ```VK_TOKEN```, то `DONEURL` можно не указывать.
@@ -142,11 +141,10 @@ module.exports = {
 
 
 ## З.Ы.
+> Я не имею ничего против автора [оригинального майнера](https://github.com/xTCry/VCoin). Просто решил вырезать донат и коммисии :)
+
 > Если надо зайти в сервис, но выкидывает, то можно использовать команду `stop`, а для возобновления `run`
 
 > При переводе берется незначительная комиссия в виде `0,1%` для статистики
 
 > При lineQuestion вывод лога для удобства приостанавливается
-
-
-[![Донат](https://img.shields.io/badge/Донат-Qiwi-orange.svg)](https://qiwi.me/xtcry)
