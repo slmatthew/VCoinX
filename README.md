@@ -1,14 +1,14 @@
 # VCoinX
 
-VK Coin Miner - недомайнер на NodeJS
+VCoinX - модификация [майнера от xTCry](https://github.com/xTCry/VCoin). Если хочется поддержать автора оригинального майнера - не используйте VCoinX.
 
 
 ![](https://pp.userapi.com/c855028/v855028357/1734f/9kFW8iHOxHc.jpg)
 
 
 [![node version](https://img.shields.io/badge/node->%3D8.0-blue.svg?style=flat-square)](https://nodejs.org/)
-[![node version](https://img.shields.io/badge/VCoin-1.3.2-purple.svg?style=flat-square)](https://github.com/xTCry/VCoin)
-[![vcoin version](https://img.shields.io/badge/VCoinX-1.3.2-purple.svg?style=flat-square)](https://github.com/slmatthew/VCoinX/)
+[![node version](https://img.shields.io/badge/VCoin-1.3.9-purple.svg?style=flat-square)](https://github.com/xTCry/VCoin)
+[![vcoin version](https://img.shields.io/badge/VCoinX-1.3.9-purple.svg?style=flat-square)](https://github.com/slmatthew/VCoinX/)
 
 ***
 
@@ -35,9 +35,9 @@ npm i
 * `-to [ID]`        - задает ID страницы для автоперевода `score`
 * `-ti [seconds]`   - задает интервал автоперевода в секундах `[по умолчанию 3600 секунд (1 час)]`
 * `-tsum [sum]`     - сколько `score` переводить (знаки до запятой)
-* `-autoBuy`        - автопокупка ускорений
-* `-autoBuyItem`    - какое покупать [ускорение](#названия-ускорений)
-* `-smartBuy`       - умная покупка ускорений
+* `-autobuy`        - автопокупка ускорений
+* `-autobuyItem`    - какое покупать [ускорение](#названия-ускорений)
+* `-smartbuy`       - умная покупка ускорений
 
 
 Запуск поизводится из каталога приложения
@@ -52,19 +52,19 @@ node index.js
 node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ```
 
-Запуск через [токен](#получение-токена) и автоперевод каждые `7200` секунды (2 часа) на аккаунт `191039467`
+Запуск через [токен](#получение-токена) и автоперевод каждые `7200` секунды (2 часа) на аккаунт `1`
 ```shell
-node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -to 191039467 -ti 7200 
+node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -to 1 -ti 7200 
 ```
 
 Запуск через [токен](#получение-токена) и автопокупка
 ```shell
-node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -autoBuy
+node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -autobuy
 ```
 
 Запуск через [токен](#получение-токена) и умная покупка
 ```shell
-node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -smartBuy
+node index.js -t AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -smartbuy
 ```
 
 Запуск через ссылку
@@ -83,7 +83,7 @@ node index.js -u https://coin.vkforms.ru?vk_access_token_settings=friends\&vk_ap
 
 | Параметр | Описание                             |
 |----------|--------------------------------------|
-| VK_TOKEN | [Получить токен](#получение-токена)  |
+| VK_TOKEN | [Поулчить токен](#получение-токена)  |
 | DONEURL  | Ссылка на приложение                 |
 
 Если указать только ```VK_TOKEN```, то `DONEURL` можно не указывать.
@@ -112,14 +112,14 @@ module.exports = {
 ## Команды
 
 - `help` - помощь 
-- `stop` - остановить 
-- `run` - запустить 
+- `stop` - остановить майнер 
+- `run` - запустить майнер 
 - `tran` - перевести коины
-- `price` - вывести текущие цены 
+- `price` - вывести текущие цены на ускорения 
 - `buy` - покупка ускорения
-- `autoBuy` - вкл\выкл автопокупку ускорений
+- `autobuy` - вкл\выкл автопокупку ускорений
 - `autoBuyItem` - выбрать какое ускорение покупать
-- `smartBuy` - вкл\выкл умную покупку ускорений
+- `smartbuy` - вкл\выкл умную покупку ускорений
 - `debug` - посмотреть служебные и заданные параметры
 - `color` - вкл/выкл режима цветной консоли
 - `info` - показать место в ТОПе и кол-во коинов
@@ -142,7 +142,7 @@ module.exports = {
 
 
 ## З.Ы.
-> Я не имею ничего против автора [оригинального майнера](https://github.com/xTCry/VCoin). Просто решил вырезать донат и коммисии :)
+> Я не имею ничего против автора [оригинального майнера](https://github.com/xTCry/VCoin). Просто решил вырезать донат :)
 
 > Если надо зайти в сервис, но выкидывает, то можно использовать команду `stop`, а для возобновления `run`
 

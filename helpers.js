@@ -1,7 +1,8 @@
 const fs = require('fs'),
 	colors = require('colors/safe'),
 	ReadLine = require('readline'),
-	GithubContent = require('github-content');
+	GithubContent = require('github-content'),
+	beep = require('beepbeep');
 const pJson = require('./package.json');
 
 // GitHub data
@@ -94,7 +95,6 @@ function now() {
 
 let rl = ReadLine.createInterface(process.stdin, process.stdout);
 rl.setPrompt('_> ');
-rl.prompt();
 rl.isQst = false;
 rl.questionAsync = (question) => {
 	return new Promise((resolve) => {
@@ -114,9 +114,7 @@ function checkUpdates() {
 			if (c[0] === "{") {
 				let data = JSON.parse(c);
 				
-				let msg = (data.version > pJson.version)? "Доступно обновление! -> github.com/slmatthew/VCoinX \t["+(data.version +"/"+ pJson.version)+"]":
-							// (data.version != pJson.version)? "Версии различаются! Проверить -> github.com/xTCry/VCoin \t["+(data.version +"/"+ pJson.version)+"]":
-							false;
+				let msg = (data.version > pJson.version) ? "Доступно обновление! -> github.com/slmatthew/VCoinX \t["+(data.version +"/"+ pJson.version)+"]": false;
 				if(msg) {
 					if(onUpdatesCB) onUpdatesCB(msg);
 					else con(msg, "white", "Red");
@@ -137,6 +135,9 @@ function rand(min, max) {
 }
 
 let cFile = "./log.txt";
+function setLogName(name) {
+	cFile = "./log_"+name+".txt";
+}
 async function infLog(data) {
 	data = "\n["+dateF()+"] \t"+data;
 
@@ -162,6 +163,19 @@ function appendFileAsync(path, data) {
 	return new Promise( (resolve, reject)=> fs.appendFile(path, data, err=> resolve(err)) );
 }
 
+
+function setTitle(title) {
+	if (process.platform == 'win32') {
+		process.title = title;
+	} else {
+		process.stdout.write('\x1b]2;' + title + '\x1b\x5c');
+	}
+};
+
+function onlyInt(e) {
+	return parseInt(e.replace(/\D+/g,""));
+}
+
 module.exports = {
 	rl,
 	con, ccon,
@@ -174,8 +188,10 @@ module.exports = {
 	existsAsync,
 	writeFileAsync,
 	appendFileAsync,
-	infLog,
-	rand,
-	now,
+	infLog, setLogName,
+	rand, now,
+	setTitle, beep,
+	onlyInt,
+	pJson,
 }
 

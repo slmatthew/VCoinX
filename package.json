@@ -1,9 +1,10 @@
 {
   "name": "vcoinx",
-  "version": "1.3.2",
-  "description": "VK Coin Miner modification",
+  "version": "1.3.9",
+  "description": "VK Coin Miner",
   "main": "index.js",
   "dependencies": {
+    "beepbeep": "^1.2.2",
     "colors": "^1.3.3",
     "github-content": "^1.0.1",
     "safe-eval": "^0.4.1",
@@ -22,7 +23,7 @@
     "vk",
     "coin"
   ],
-  "author": "xTCry, mod by slmatthew",
+  "author": "xTCry (Vladislav Khr)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/slmatthew/VCoinX/issues"

@@ -3,8 +3,11 @@ node_modules/
 
 .config.js
 .htpasswd
-log.txt
+*.txt
 test.js
+log.txt
+
+package-lock.json
 
 !*.keep
 !**/*.keep
